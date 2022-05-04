@@ -4,6 +4,11 @@
 
 using namespace std;
 
+int inch2feet(int x)	//function for converting because consistency
+{
+	return(x/12);
+}
+
 int ounces2pounds(int x)
 {
     return(x*16);
@@ -21,7 +26,7 @@ double weight2kg(int stones, int pounds, int ounces)
 
 double height2metres(int feet, int inches)
 {
-    return(feet/3.82);
+    return(feet + inch2feet(inches) / 3.82);	//changed so that inches are included
 }
 
 char categorise(double kg, double metre)
