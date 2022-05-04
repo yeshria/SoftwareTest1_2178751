@@ -1,26 +1,28 @@
-#include <iostream>
-#include <fstream>
+#include <iostream>	//there was not enough time for me to do data validation but ideally you would loop through all characters 
+#include <fstream>	//and check if each character is between 0 and 9, and to direct the user to an error message when needed
 #include <string>
 
 using namespace std;
 
 int inch2feet(int x)	//function for converting because consistency
 {
+	if (x >-1)
 	return(x/12);
 }
 
 int ounces2pounds(int x)
 {
-    return(x*16);
+	if (x > -1)
+    	return(x/16);	//ounces to pounds means divided by 16, not multiplied (if i am doing maths right)
 }
 
 int stones2pounds(int x)
-{
-    return(x*14);
+{	if (x > -1)
+    	return(x*14);
 }
 
 double weight2kg(int stones, int pounds, int ounces)
-{
+{	if stones > -1)
     return (stones2pounds(stones)+pounds+ounces2pounds(ounces))/2.2;
 }
 
@@ -37,7 +39,7 @@ char categorise(double kg, double metre)
         cat='A';
     else if (bmi<=26)
         cat='B';
-    else if (bmi<=300)
+    else if (bmi<=30)	//if equal to or less than 30, not 300
         cat='C';
     else
         cat='D';
